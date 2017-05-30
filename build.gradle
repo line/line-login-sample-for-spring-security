@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = targetCompatibility = 1.8;
+
+bootRun {
+    systemProperties = System.properties
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE'
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:Brussels-SR2'
+    }
+}
+
+repositories {
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.security.oauth:spring-security-oauth2'
+}
