@@ -3,8 +3,8 @@ security:
     client:
       client-id: # 取得した Channel ID を入力します
       client-secret: # 取得した Channel Secret を入力します
-      client-authentication-scheme: form # OAuth2 Token Endpoint 呼び出しに使う format です。LINE Login では "FORM" に対応しています。
-      user-authorization-uri: https://access.line.me/dialog/oauth/weblogin  # 固定値。ID 連携先のログイン画面です。今回は LINE のログイン画面になります。
-      access-token-uri: https://api.line.me/v2/oauth/accessToken # 固定値。認証された token を元に、実際のユーザー情報取得のための token を取得する API の Path です。
+      client-authentication-scheme: header # OAuth2 Token Endpoint 呼び出しに使う format です。Spring Security デフォルト値ですが、今回は明示的に指定します。
+      user-authorization-uri: https://access.line.me/oauth2/v2.1/authorize?scope=profile  # 固定値。ID 連携先のログイン画面です。今回は LINE のログイン画面になります。
+      access-token-uri: https://api.line.me/oauth2/v2.1/token # 固定値。認証された token を元に、実際のユーザー情報取得のための token を取得する API の Path です。
     resource:
       user-info-uri: https://api.line.me/v2/profile # 固定値。実際のユーザー情報取得のために提供される API です。2017/05時点では、認証されたユーザー ID・ユーザ名・ひとことの内容、が取得できます。
