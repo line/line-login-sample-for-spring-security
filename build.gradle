@@ -16,8 +16,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE'
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE'
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE'
     }
 }
 
@@ -34,5 +34,5 @@ repositories {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-security'
-    compile 'org.springframework.security.oauth:spring-security-oauth2'
+    compile 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.6.RELEASE'
 }
