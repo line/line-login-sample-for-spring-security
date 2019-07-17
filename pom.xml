@@ -11,7 +11,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.3.RELEASE</version>
+    <version>2.1.6.RELEASE</version>
   </parent>
 
   <build>
@@ -41,8 +41,9 @@
       </artifactId><!-- YAML ベースでの spring-security-oauth2 の設定と自動読み込みを可能にします -->
     </dependency>
     <dependency>
-      <groupId>org.springframework.security.oauth</groupId>
-      <artifactId>spring-security-oauth2</artifactId><!-- LINE Login 連携に必要なライブラリです -->
+      <groupId>org.springframework.security.oauth.boot</groupId>
+      <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+      <version>2.1.6.RELEASE</version><!-- LINE Login 連携に必要なライブラリです -->
     </dependency>
   </dependencies>
 </project>
